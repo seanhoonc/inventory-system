@@ -30,18 +30,25 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+CUSTOM_APPS = [
+    "common.apps.CommonConfig",
+    "items.apps.ItemsConfig",
+    "users.apps.UsersConfig",
+    "suppliers.apps.SuppliersConfig",
+    "categories.apps.CategoriesConfig",
+    "orders.apps.OrdersConfig",
+]
+
+SYSTEM_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "items.apps.ItemsConfig",
-    "users.apps.UsersConfig",
-    "suppliers.apps.SuppliersConfig",
-    "phonenumber_field",
 ]
+
+INSTALLED_APPS = CUSTOM_APPS + SYSTEM_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
